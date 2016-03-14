@@ -9,7 +9,7 @@ public class Request extends Base {
 				+ (sendCount == null ? "" : sendCount);
 	}
 
-	public static Request getChaping() {
+	public static Request get(String adType,String sendCount) {
 		Request r = new Request();
 		r.appId = "01hBO810";
 		r.uuid = Utils.getRandomIMEI();
@@ -19,8 +19,8 @@ public class Request extends Base {
 		r.imsi = Utils.getRandomIMSI();
 		r.carrier = Utils.getCarrierByIMSI(r.imsi);
 		r.mac = Utils.getRandomMAC();
-		r.adType = "chaping";
-		r.sendCount = "3";
+		r.adType = adType;
+		r.sendCount = sendCount;
 		return r;
 	}
 }
