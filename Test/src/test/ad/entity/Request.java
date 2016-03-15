@@ -7,8 +7,8 @@ public class Request extends Base {
 
 	public Request() {
 	}
-	
-	public Request(Base b,String adId,String adType,String sendCount) {
+
+	public Request(Base b, String adId, String adType, String sendCount) {
 		super();
 		this.appId = b.appId;
 		this.uuid = b.uuid;
@@ -22,15 +22,15 @@ public class Request extends Base {
 		this.mac = b.mac;
 		this.adId = adId;
 		this.adType = adType;
+		this.sendCount = sendCount;
 	}
 
 	@Override
 	public String toString() {
-		return super.toString() + "&sendCount="
-				+ (sendCount == null ? "" : sendCount);
+		return super.toString() + "&sendCount=" + (sendCount == null ? "" : sendCount);
 	}
 
-	public static Request get(String adType,String sendCount) {
+	public static Request get(String adType, String sendCount) {
 		Request r = new Request();
 		r.appId = "01hBO810";
 		r.uuid = Utils.getRandomIMEI();

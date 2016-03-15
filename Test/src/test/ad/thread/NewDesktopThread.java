@@ -1,6 +1,5 @@
 package test.ad.thread;
 
-import sun.awt.geom.AreaOp.AddOp;
 import test.ad.data.AdData;
 import test.ad.entity.Action;
 import test.ad.entity.Request;

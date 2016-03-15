@@ -11,9 +11,11 @@ public class PushThread extends Thread {
 	@Override
 	public void run() {
 		getAdList();
+		Utils.sleep(1, 1);
 		postPush();
 		if (!isUserClick())
 			return;
+		Utils.sleep(2, 3);
 		postStart();
 	}
 

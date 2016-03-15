@@ -6,8 +6,7 @@ import java.util.Random;
 
 public class Utils {
 	public static Random sRandom = new Random();
-	public static String[] all = new String[] { "46000", "46002", "46007",
-			"46001", "46006", "46003", "46005" };
+	public static String[] all = new String[] { "46000", "46002", "46007", "46001", "46006", "46003", "46005" };
 
 	public static String getRandomIMEI() {
 		// 例 507835236185671
@@ -55,8 +54,7 @@ public class Utils {
 		return result;
 	}
 
-	public static String[] oss = new String[] { "4.4.2", "4.4.3", "4.4.4",
-			"5.0.0", "5.0.1", "5.1.1" };
+	public static String[] oss = new String[] { "4.4.2", "4.4.3", "4.4.4", "5.0.0", "5.0.1", "5.1.1" };
 
 	public static String getRandomOSVersion() {
 		return oss[sRandom.nextInt(oss.length)];
@@ -109,15 +107,26 @@ public class Utils {
 		}
 		return "";
 	}
+
 	/**
 	 * random result
-	 * @param rate rate to be true.should between 0.0 and 1.0
+	 * 
+	 * @param rate
+	 *            rate to be true.should between 0.0 and 1.0
 	 * @return
 	 */
-	public static boolean random(float rate){
-		if (rate<0 || rate>1) {
+	public static boolean random(float rate) {
+		if (rate < 0 || rate > 1) {
 			throw new IllegalArgumentException();
 		}
-		return sRandom.nextFloat()<rate;
+		return sRandom.nextFloat() < rate;
+	}
+
+	public static void sleep(int time, int range) {
+		try {
+			Thread.sleep(time * 1000 + sRandom.nextInt(range * 1000));
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }

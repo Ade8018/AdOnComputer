@@ -15,12 +15,16 @@ public class ChapingThread extends Thread {
 			L.log("user didn't click ad");
 			return;
 		}
+		Utils.sleep(2, 2);
 		getAdList();
+		Utils.sleep(8, 8);
 		postAdAppDownloaded();
 		if (!isUserInstallApp()) {
 			return;
 		}
+		Utils.sleep(6, 6);
 		postAdAppInstalled();
+		Utils.sleep(1, 1);
 		postAdAppStarted();
 	}
 
