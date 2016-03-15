@@ -1,4 +1,7 @@
-package test.ad;
+package test.ad.entity;
+
+import test.ad.util.Utils;
+
 public class Base {
 	public static final String SDK_VERSION = "2.6.4";
 	String appId;
@@ -15,6 +18,22 @@ public class Base {
 	String mac;// 00:08:22:24:fe:fb
 	String adId;// 首次获取广告为空
 	String adType;// chaping
+	
+	public Base() {
+	}
+	
+	public static Base get(){
+		Base b = new Base();
+		b.appId = "01hBO810";
+		b.uuid = Utils.getRandomIMEI();
+		b.ua = Utils.getRandomUA();
+		b.os = Utils.getRandomOSVersion();
+		b.packageName = Utils.getRandomPackageName();
+		b.imsi = Utils.getRandomIMSI();
+		b.carrier = Utils.getCarrierByIMSI(b.imsi);
+		b.mac = Utils.getRandomMAC();
+		return b;
+	}
 
 	@Override
 	public String toString() {

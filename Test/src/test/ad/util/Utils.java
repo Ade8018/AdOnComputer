@@ -1,13 +1,11 @@
-package test.ad;
+package test.ad.util;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 public class Utils {
-	private static Random sRandom = new Random();
+	public static Random sRandom = new Random();
 	public static String[] all = new String[] { "46000", "46002", "46007",
 			"46001", "46006", "46003", "46005" };
 
@@ -110,5 +108,16 @@ public class Utils {
 			return resp.substring(index + len, index + len + 2);
 		}
 		return "";
+	}
+	/**
+	 * random result
+	 * @param rate rate to be true.should between 0.0 and 1.0
+	 * @return
+	 */
+	public static boolean random(float rate){
+		if (rate<0 || rate>1) {
+			throw new IllegalArgumentException();
+		}
+		return sRandom.nextFloat()<rate;
 	}
 }

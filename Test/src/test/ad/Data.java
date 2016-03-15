@@ -1,5 +1,7 @@
 package test.ad;
 
+import test.ad.util.Base64;
+
 public class Data {
 	public static String[] datas = new String[] {
 			"YXBwSWQ9MDFoQk84MTAmdXVpZD01MDc4MzUyMzYxODU2NzEmdWE9TmF2Um9hZEBORVhPIFNtYXJ0eSZvcz00LjQuMiZzYWZlPTEmdmVyc2lvbkNvZGU9MS4wJnBhY2thZ2VOYW1lPWxrdC50ZXN0bmF0aXZlJnNka1ZlcnNpb249Mi42LjUmcHJvdmluY2U9JmNhcnJpZXI9Y3VjYyZpbXNpPTQ2MDAxNjY0NDI0NzE0MCZtYWM9MDA6MDg6MjI6YzQ6ZTM6MTEmc2VuZENvdW50PTMmYWRJZD0mYWRUeXBlPWNoYXBpbmc=",
@@ -50,7 +52,7 @@ public class Data {
 					.println(String.valueOf(i)+" "+new String(Base64.decode(datas[i].getBytes(), 0)));
 		}
 
-		String resp = Main.postInfo(datas[10], "b");
-		System.out.println(resp);
+//		String resp = Http.postInfo(datas[25], "a");
+//		System.out.println(resp);
 	}
 }

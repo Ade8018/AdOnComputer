@@ -1,4 +1,4 @@
-package test.ad;
+package test.ad.entity;
 
 public class Action extends Base {
 	String action;
@@ -10,7 +10,7 @@ public class Action extends Base {
 				+ "&adType1=" + (adType1 == null ? "" : adType1);
 	}
 
-	public Action(Base b, String action) {
+	public Action(Base b,String adType, String action,String adId) {
 		super();
 		this.appId = b.appId;
 		this.uuid = b.uuid;
@@ -22,8 +22,8 @@ public class Action extends Base {
 		this.carrier = b.carrier;
 		this.imsi = b.imsi;
 		this.mac = b.mac;
-		this.adId = b.adId;
+		this.adId = adId;
 		this.action = action;
-		this.adType = b.adType;
+		this.adType = adType;
 	}
 }

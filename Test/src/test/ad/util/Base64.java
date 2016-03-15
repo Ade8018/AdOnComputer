@@ -1,4 +1,4 @@
-package test.ad;
+package test.ad.util;
 /*
  * Copyright (C) 2010 The Android Open Source Project
  *
