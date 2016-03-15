@@ -95,7 +95,7 @@ public class Main {
 		System.out.println(resp);
 	}
 
-	private static String postInfo(String param, String method) {
+	public static String postInfo(String param, String method) {
 		URL url;
 		String result = null;
 		try {
