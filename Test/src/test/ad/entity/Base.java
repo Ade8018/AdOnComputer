@@ -3,7 +3,7 @@ package test.ad.entity;
 import test.ad.util.Utils;
 
 public class Base {
-	public static final String SDK_VERSION = "2.6.5";
+	public static final String SDK_VERSION = "2.6.4";
 	public String appId;
 	public String uuid;// imei
 	public String ua;// GiONEE@GN9006

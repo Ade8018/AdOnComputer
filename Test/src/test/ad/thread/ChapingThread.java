@@ -62,7 +62,14 @@ public class ChapingThread extends Thread {
 		Request r = new Request(AdData.getCurrent().base, AdData.getCurrent().ChapingAdId, "chaping", AdData.getCurrent().ChapingAdId == null ? "3" : "2");
 		String resp = Http.post(r);
 		getAdId(resp);
+		getProvince(resp);
 		L.log(resp);
+	}
+
+	private void getProvince(String resp) {
+		if (AdData.getCurrent().base.province == null) {
+			AdData.getCurrent().base.province = Utils.getProvince(resp);
+		}
 	}
 
 	private void getAdId(String resp) {
