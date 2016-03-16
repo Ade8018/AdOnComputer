@@ -7,7 +7,7 @@ import test.ad.log.L;
 import test.ad.util.Http;
 import test.ad.util.Utils;
 
-public class NewDesktopThread extends Thread {
+public class NewDesktop implements Runnable {
 	@Override
 	public void run() {
 		// 第一次一定要获取list，之后的话可以随机执行以下方法中的一个

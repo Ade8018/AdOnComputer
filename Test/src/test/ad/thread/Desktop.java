@@ -5,7 +5,7 @@ import test.ad.entity.Request;
 import test.ad.log.L;
 import test.ad.util.Http;
 
-public class DesktopThread extends Thread {
+public class Desktop implements Runnable {
 
 	@Override
 	public void run() {

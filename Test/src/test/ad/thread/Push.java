@@ -7,7 +7,7 @@ import test.ad.log.L;
 import test.ad.util.Http;
 import test.ad.util.Utils;
 
-public class PushThread extends Thread {
+public class Push implements Runnable {
 	@Override
 	public void run() {
 		getAdList();
