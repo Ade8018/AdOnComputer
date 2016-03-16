@@ -20,7 +20,7 @@ public class PushThread extends Thread {
 	}
 
 	private boolean isUserClick() {
-		return Utils.random(0.8f);
+		return Utils.random(0.3f);
 	}
 
 	private void getAdList() {
