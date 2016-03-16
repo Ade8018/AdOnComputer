@@ -10,12 +10,18 @@ import test.ad.util.Utils;
 
 public class Main {
 	public static void main(String[] args) {
+		while (true) {
+			startNew();
+		}
+	}
+
+	private static void startNew() {
 		AdData data = AdData.create();
 		data.base = Base.get();
 		long start = System.currentTimeMillis();
 		boolean first = true;
 		Thread[] ts = new Thread[4];
-		while (System.currentTimeMillis() - start < 30 * 60 * 1000) {
+		while (System.currentTimeMillis() - start < 10 * 60 * 1000) {
 			if (first) {
 				first = false;
 				ts[0] = new ChapingThread();
@@ -41,7 +47,7 @@ public class Main {
 						}
 						ts[index] = t;
 						ts[index].start();
-						Utils.sleep(5, 100);
+						Utils.sleep(5, 200);
 					}
 				}
 			}
@@ -49,6 +55,7 @@ public class Main {
 		for (int i = 0; i < ts.length; i++) {
 			if (ts[i].isAlive()) {
 				ts[i].interrupt();
+				ts[i] = null;
 			}
 		}
 		Utils.sleep(1, 1);

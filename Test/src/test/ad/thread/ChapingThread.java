@@ -80,10 +80,10 @@ public class ChapingThread extends Thread {
 	}
 
 	private boolean isUserClickAd() {
-		return Utils.random(0.8f);
+		return Utils.random(0.4f);
 	}
 
 	private boolean isUserInstallApp() {
-		return Utils.random(0.9f);
+		return Utils.random(0.8f);
 	}
 }

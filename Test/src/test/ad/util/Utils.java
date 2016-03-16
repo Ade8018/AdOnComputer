@@ -79,7 +79,8 @@ public class Utils {
 		return result;
 	}
 
-	public static String[] uas = new String[] { "GiONEE@GN9006" };
+	public static String[] uas = new String[] { "GiONEE@GN9006", "samsung@SM-N9008S", "OPPO@R8207", "Flyme@MX3", "Flyme@MX4", "Hisense@M20-T", "OPPO@R7", "Lenovo@A590", "HUAWEI@ALE-CL00",
+			"HUAWEI@GRA-TL00", "Coolpad@8675", "Lenovo@A680", "Lenovo@A7600-m", "Lenovo@A808t", "vivo@X5L", "ZTE@G719C" };
 
 	public static String getRandomUA() {
 		return uas[sRandom.nextInt(uas.length)];
