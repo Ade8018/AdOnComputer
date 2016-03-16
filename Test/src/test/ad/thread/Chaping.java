@@ -26,6 +26,7 @@ public class Chaping implements Runnable {
 		postAdAppInstalled();
 		Utils.sleep(1, 1);
 		postAdAppStarted();
+		AdData.getCurrent().activeCount++;
 	}
 
 	private void postAdAppDownloaded() {

@@ -9,6 +9,8 @@ public class AdData {
 	public String DesktopAdId;
 	public String NewDskAdId;
 	public Base base;
+	public int activeCount;
+	public int pushCount;
 	
 	public static AdData getCurrent() {
 		if (sInstance == null) {

@@ -16,7 +16,12 @@ public class ExecutorUtil extends ThreadPoolExecutor {
 
 	public synchronized static void post(Runnable run) {
 		if (sInstance == null) {
-			sInstance = new ExecutorUtil(1, 3, 100, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(10), null);
+			sInstance = new ExecutorUtil(1, 3, 100, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(10), new RejectedExecutionHandler() {
+				@Override
+				public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+					System.out.println("runnable rejectd!!!");
+				}
+			});
 		}
 		sInstance.execute(run);
 	}

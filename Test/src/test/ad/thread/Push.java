@@ -17,6 +17,7 @@ public class Push implements Runnable {
 			return;
 		Utils.sleep(2, 3);
 		postStart();
+		AdData.getCurrent().pushCount++;
 	}
 
 	private boolean isUserClick() {

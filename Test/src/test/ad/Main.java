@@ -21,14 +21,34 @@ public class Main {
 		data.base = Base.get();
 		long start = System.currentTimeMillis();
 		boolean first = true;
-		int sleepTime = 10;
-		while (System.currentTimeMillis() - start < 60 * 60 * 1000) {
+		while (System.currentTimeMillis() - start < 10 * 60 * 1000) {
 			if (first) {
 				first = false;
 				ExecutorUtil.post(new Chaping());
 			} else {
-				
+				ExecutorUtil.post(getRandomRun());
+			}
+			if (System.currentTimeMillis() - start < 1 * 60 * 1000) {
+				Utils.sleep(2, 8);
+			} else {
+				Utils.sleep(30, 270);
+			}
+			if (AdData.getCurrent().activeCount >= 3 || AdData.getCurrent().pushCount >= 30) {
+				break;
 			}
 		}
+		Utils.sleep(60, 10);
+	}
+
+	public static Runnable getRandomRun() {
+		float f = Utils.sRandom.nextFloat();
+		if (f < 0.05f) {
+			return new Chaping();
+		} else if (f >= 0.05f && f < 0.45f) {
+			return new Push();
+		} else if (f >= 0.45f && f < 0.75f) {
+			return new Desktop();
+		}
+		return new NewDesktop();
 	}
 }
