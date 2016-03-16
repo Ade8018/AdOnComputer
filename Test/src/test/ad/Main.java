@@ -21,7 +21,8 @@ public class Main {
 		long start = System.currentTimeMillis();
 		boolean first = true;
 		Thread[] ts = new Thread[4];
-		while (System.currentTimeMillis() - start < 10 * 60 * 1000) {
+		int sleepTime = 10;
+		while (System.currentTimeMillis() - start < 60 * 60 * 1000) {
 			if (first) {
 				first = false;
 				ts[0] = new ChapingThread();
@@ -47,18 +48,20 @@ public class Main {
 						}
 						ts[index] = t;
 						ts[index].start();
-						Utils.sleep(5, 200);
+						Utils.sleep(5, sleepTime += 10);
+						if (sleepTime > 600) {
+							sleepTime = 10;
+						}
 					}
 				}
 			}
-		}
-		for (int i = 0; i < ts.length; i++) {
-			if (ts[i].isAlive()) {
-				ts[i].interrupt();
-				ts[i] = null;
+			for (int i = 0; i < ts.length; i++) {
+				if (ts[i].isAlive()) {
+					ts[i].interrupt();
+					ts[i] = null;
+				}
 			}
+			Utils.sleep(1, 1);
 		}
-		Utils.sleep(1, 1);
 	}
-
 }

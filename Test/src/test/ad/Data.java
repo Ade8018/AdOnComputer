@@ -1,6 +1,9 @@
 package test.ad;
 
+import test.ad.entity.Base;
+import test.ad.entity.Request;
 import test.ad.util.Base64;
+import test.ad.util.Http;
 
 public class Data {
 	public static String[] datas = new String[] {
@@ -48,11 +51,12 @@ public class Data {
 
 	public static void main(String[] args) {
 		for (int i = 0; i < datas.length; i++) {
-			System.out
-					.println(String.valueOf(i)+" "+new String(Base64.decode(datas[i].getBytes(), 0)));
+			System.out.println(String.valueOf(i) + " "
+					+ new String(Base64.decode(datas[i].getBytes(), 0)));
 		}
-
-//		String resp = Http.postInfo(datas[25], "a");
-//		System.out.println(resp);
+		Base b = Base.get();
+		Request r = new Request(b, null, "chaping", "3");
+		b.province = "湖北";
+//		System.out.println(Http.post(r));
 	}
 }
